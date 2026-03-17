@@ -10,9 +10,7 @@
 void print_all(const char * const format, ...)
 {
 va_list arg_list;
-const char *fmt_ptr;
-char *str_ptr;
-const char *sep_str;
+const char *fmt_ptr, *str_ptr, *sep_str;
 char char_val;
 int num_val;
 double float_val;
