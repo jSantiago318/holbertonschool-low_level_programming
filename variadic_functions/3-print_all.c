@@ -9,46 +9,46 @@
  */
 void print_all(const char * const format, ...)
 {
-va_list args;
-const char *f;
-char *str;
-const char *sep;
-char c;
-int n;
-double fl;
+va_list arg_list;
+const char *fmt_ptr;
+char *str_ptr;
+const char *sep_str;
+char char_val;
+int num_val;
+double float_val;
 
-va_start(args, format);
-f = format;
-sep = "";
-while (f && *f)
+va_start(arg_list, format);
+fmt_ptr = format;
+sep_str = "";
+while (fmt_ptr && *fmt_ptr)
 {
-switch (*f)
+switch (*fmt_ptr)
 {
 case 'c':
-c = va_arg(args, int);
-printf("%s%c", sep, c);
-sep = ", ";
+char_val = va_arg(arg_list, int);
+printf("%s%c", sep_str, char_val);
+sep_str = ", ";
 break;
 case 'i':
-n = va_arg(args, int);
-printf("%s%d", sep, n);
-sep = ", ";
+num_val = va_arg(arg_list, int);
+printf("%s%d", sep_str, num_val);
+sep_str = ", ";
 break;
 case 'f':
-fl = va_arg(args, double);
-printf("%s%f", sep, fl);
-sep = ", ";
+float_val = va_arg(arg_list, double);
+printf("%s%f", sep_str, float_val);
+sep_str = ", ";
 break;
 case 's':
-str = va_arg(args, char *);
-if (str == NULL)
-str = "(nil)";
-printf("%s%s", sep, str);
-sep = ", ";
+str_ptr = va_arg(arg_list, char *);
+if (str_ptr == NULL)
+str_ptr = "(nil)";
+printf("%s%s", sep_str, str_ptr);
+sep_str = ", ";
 break;
 }
-f++;
+fmt_ptr++;
 }
-va_end(args);
+va_end(arg_list);
 printf("\n");
 }
