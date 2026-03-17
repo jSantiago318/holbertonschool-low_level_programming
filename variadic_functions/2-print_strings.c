@@ -3,7 +3,6 @@
 
 /**
  * print_strings - print all strings followed by a new line at the end of file
- * 
  * @separator: string to be printed between  strings
  * @n: number of strings passed to  function
  */
