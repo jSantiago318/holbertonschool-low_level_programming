@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-char c;
+int c;
 char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 for (c = 0; c < 26; c++)
 {
