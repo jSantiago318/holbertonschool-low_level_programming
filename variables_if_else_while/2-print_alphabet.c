@@ -7,11 +7,13 @@
  */
 int main(void)
 {
-int c;
-char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
-for (c = 0; c < 26; c++)
-{
-putchar(alphabet[c]);
-}
-putchar('\n');
+	char c;
+
+	for (c = 'a'; c <= 'z'; c++)
+	{
+		putchar(c);
+	}
+	putchar('\n');
+
+	return (0);
 }
