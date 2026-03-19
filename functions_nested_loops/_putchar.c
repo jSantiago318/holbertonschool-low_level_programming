@@ -1,20 +1,14 @@
-#include <stdio.h>
-#include <stdarg.h>
+#include <unistd.h>
 
 /**
- * _printf - prints formatted output to stdout
- * @format: format string
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
  *
- * Return: number of characters printed
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-int _printf(const char *format, ...)
+int _putchar(char c)
 {
-	va_list args;
-	int result;
-
-	va_start(args, format);
-	result = vprintf(format, args);
-	va_end(args);
-
-	return (result);
+	return (write(1, &c, 1));
 }
+
