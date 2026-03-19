@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include "main.h"
+
 /**
  * main - Write a function that prints a character to stdout.
  *
@@ -6,6 +7,8 @@
  */
 int main(void)
 {
-printf("_putchar\n");
-return (0);
+	_printf("_putchar\n");
+
+	return (0);
 }
+
