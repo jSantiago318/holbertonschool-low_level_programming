@@ -23,11 +23,10 @@ void print_alphabet(void)
  */
 void print_alphabet_x10(void)
 {
-	int i;
+	int count;
 
-	for (i = 0; i < 10; i++)
+	for (count = 0; count < 10; count++)
 	{
 		print_alphabet();
 	}
 }
-
