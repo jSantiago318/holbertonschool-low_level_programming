@@ -1,4 +1,4 @@
- 
+
 #include "main.h"
 #include <string.h>
 
@@ -10,36 +10,38 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int count;
-  // string return_string
-  
-	const char *ptr;
+  va_list args;
+  int count;
+  /*
+  * string return_string
+  */
 
-	if (format == NULL)
-		return (-1);
+  const char *argument_string;
 
-	va_start (args, format);
-	count = 0;
-	ptr = format;
-	while (*ptr)
-	{
-     /* 
-      print the normal character without % being in pointer
-    */
-    if (*ptr != '%')
+  if (format == NULL)
+    return (-1);
+
+  va_start(args, format);
+  count = 0;
+  argument_string = format;
+while (*argument_string)
+  {
+    /*
+     print the normal character without % being in pointer
+   */
+    if (*argument_string != '%')
     {
-      _putchar(*ptr);
+      _putchar(*argument_string);
       count++;
     }
-      if (*ptr == '%') {
-      ptr++;
+    if (*argument_string == '%')
+    {
+      argument_string++;
 
-      if (*ptr == 'r')
+      if (*argument_string == 'r')
       {
-        return (-1);
+      return (-1);
       }
-      
 
       /*
        * %c print a single character
@@ -54,38 +56,30 @@ int _printf(const char *format, ...)
        * /x print a number in hexidecimal (base 16)
        * %% print a percent sign (\% also works)
        */
-      
-       /*
-      if (*ptr == 'c')
-        count += manager_char( format);
-      else if (*ptr == 's')
-        count += manager_string( format);
-      else if (*ptr == '%') 
+
+      /* VERIFICAR %c*/
+      if (*argument_string == 'c')
       {
-        _putchar('%');
-        count++;
+      count += manager_char(args);
       }
-        */
+      /* VERIFICAR %s para string >> nested loop*/
+      if (*argument_string == 's')
+      {
+      count += manager_string(args);
+      }
+      /* VERIFICAR %% para percent sign*/
+      if (*argument_string == '%')
+      {
+      _putchar('%');
+      count++;
+      }
 
+      /* VERIFICAR si es %d */
 
-          /* VERIFICAR %c*/
-        if (*ptr == 'c')
-          count += manager_char(args);
-                  /* VERIFICAR %s para string >> nested loop*/
-        if (*ptr == 's')
-          count += manager_string(args);
-                  /* VERIFICAR %% para percent sign*/
-        if (*ptr == '%')
-        {
-          _putchar('%');
-          count++;
-        }
-              
+      /* VERIFICAR si es %i */
     }
-		ptr++;
-   
-  
-	}
-	va_end (args);
-	return (count);
+    argument_string++;
+  }
+  va_end(args);
+  return (count);
 }

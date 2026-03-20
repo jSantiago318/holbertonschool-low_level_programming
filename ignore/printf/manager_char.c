@@ -48,3 +48,12 @@ int manager_percent(va_list args)
 	(void)args;
 	return (0);
 }
+
+
+/* 
+* TODO : manager_double - prints a literal percent sign
+*/
+
+/*
+* TODO : manager_int - prints an integer argument
+*/
