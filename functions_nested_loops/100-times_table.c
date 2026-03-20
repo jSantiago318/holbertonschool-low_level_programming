@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_times_table - print 'n' times table, starting with 0
  * @n: the number for the times table
@@ -21,28 +22,19 @@ void print_times_table(int n)
 			if (j == 0)
 			{
 				_putchar((product % 10) + '0');
-			}
-			else
-			{
-				_putchar(',');
-				_putchar(' ');
-
-				if (product < 10)
-				{
-					_putchar(' ');
-				}
-				else if (product < 100)
-				{
-					_putchar((product / 10) + '0');
-				}
-				else
-				{
-					_putchar((product / 100) + '0');
-					_putchar(((product / 10) % 10) + '0');
-				}
-
-				_putchar((product % 10) + '0');
-			}
+			} else {
+                /* using printf for easier debugging */
+                printf(" %d", product);
+                /* if not last column, add comma and space */
+                if (j != n)
+                    printf(", ");
+                if (product < 10)
+                    printf("  "); /* add extra spaces for alignment */
+                else if (product < 100)
+                    printf(" "); /* add extra space for alignment */
+                
+            
+             }
 		}
 		_putchar('\n');
 	}
