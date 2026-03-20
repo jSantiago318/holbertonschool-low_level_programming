@@ -6,8 +6,7 @@ Write a program that prints the numbers from 1 to 100, followed by a new line. B
     Each number or word should be separated by a space
     You are allowed to use the standard library
 
-*/
-#include "main.h"
+*/ 
 #include <stdio.h>
 
 /**
