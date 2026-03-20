@@ -28,7 +28,6 @@ int main(void)
         } else {
             printf(" %d", counter);
         }
-    }
-    printf("\n");
+    } 
     return 0;
 }
