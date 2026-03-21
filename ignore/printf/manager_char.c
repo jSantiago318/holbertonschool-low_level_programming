@@ -46,14 +46,51 @@ int manager_string(va_list args)
 int manager_percent(va_list args)
 {
 	(void)args;
-	return (0);
+	_putchar('%');
+	return (1);
 }
 
+/**
+ * print_number - prints an unsigned number recursively
+ * @num: the unsigned number to print
+ *
+ * Return: number of characters printed
+ */
+int print_number(unsigned int num)
+{
+	int count = 0;
 
-/* 
-* TODO : manager_double - prints a literal percent sign
-*/
+	if (num >= 10)
+		count += print_number(num / 10);
+	_putchar((num % 10) + '0');
+	count++;
+	return (count);
+}
 
-/*
-* TODO : manager_int - prints an integer argument
-*/
+/**
+ * manager_int - prints an integer argument
+ * @args: va_list containing the integer
+ *
+ * Return: number of characters printed
+ */
+int manager_int(va_list args)
+{
+	int n;
+	unsigned int num;
+	int count = 0;
+
+	n = va_arg(args, int);
+	if (n < 0)
+	{
+		_putchar('-');
+		count++;
+		num = (unsigned int)-n;
+	}
+	else
+	{
+		num = (unsigned int)n;
+	}
+	count += print_number(num);
+	return (count);
+}
+
