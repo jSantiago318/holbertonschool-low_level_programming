@@ -16,3 +16,8 @@
   - Prototype: `void array_iterator(int *array, size_t size, void (*action)(int))`
   - Iterate through the array and call the function pointer on each element
 
+- **2-int_index.c**: Write a function that searches for an integer in an array.
+  - Prototype: `int int_index(int *array, int size, int (*cmp)(int))`
+  - Searches for the first element for which the comparison function returns non-zero
+  - Returns the index if found, -1 if not found or invalid parameters
+
