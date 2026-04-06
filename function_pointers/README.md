@@ -12,3 +12,7 @@
   - Function pointer `f` is a function that takes a char pointer and returns void
   - Use the function pointer to print the name
 
+- **1-array_iterator.c**: Write a function that executes a function given as a parameter on each element of an array.
+  - Prototype: `void array_iterator(int *array, size_t size, void (*action)(int))`
+  - Iterate through the array and call the function pointer on each element
+
